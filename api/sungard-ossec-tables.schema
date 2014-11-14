@@ -1,0 +1,19 @@
+CREATE TABLE `acknowledgement` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `alert_id` smallint(5) unsigned NOT NULL,
+  `owner` varchar(32) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `time` (`timestamp`)
+);
+
+CREATE TABLE `comment` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `alert_id` smallint(5) unsigned NOT NULL,
+  `author` varchar(32),
+  `content` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `time` (`timestamp`)
+);
+

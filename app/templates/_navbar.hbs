@@ -1,0 +1,9 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    {{#if isMainSearchBarActive}}
+      <h2>{{ input-focus type=text focus-out="hideMainSearchBar"}}</h2>
+    {{else}}
+    <h2 {{action "showMainSearchBar" on="mouseEnter"}}>Search</h2>
+    {{/if}}
+  </div>
+</nav>

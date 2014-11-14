@@ -1,0 +1,16 @@
+
+<div {{bind-attr class=":ack-select isAckDropdownActive:ack-select-active"}}> 
+  <label {{bind-attr class=":ack-select isAckDropdownActive::disabled"}}>Change Status</label>
+  
+  <div  {{bind-attr class=":ack-value isAckDropdownActive:disabled"}}>
+    {{value}}
+    <span {{action 'toggleAckDropdownActive'}} class="glyphicon glyphicon-chevron-down chevron"></span> 
+  </div>
+  <ul {{bind-attr class="isAckDropdownActive::disabled"}}>
+    {{#each content}}
+    <li {{action 'selectValue' value}}>
+      <span>{{label}}</span>
+    </li>
+    {{/each}}
+  </ul>
+</div>

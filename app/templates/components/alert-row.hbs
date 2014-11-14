@@ -1,0 +1,13 @@
+<td {{action 'toggleDetails'}} style="width: 30px">
+  {{dropdown-arrow toggled=isDetailsActive}}
+</td>
+<td style="width: 50px; text-align: center" {{action 'toggleAlertSelection'}}>{{alert.level}}</td>
+<td>{{alert.server}}</td>
+<td>{{alert.description}}</td>
+<td class="full-log">{{alert.full_log}}</td>
+<td style="width: 160px">{{format-date alert.timestamp 'ddd MMM D YYYY HH:mm'}}</td>
+
+<td>
+  {{ack-dropdown content=alert.statuses value=alert.status selectedValue="updateAlertAcknowledgement"}}
+</td>
+<td></td>

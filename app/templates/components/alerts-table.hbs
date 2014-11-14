@@ -1,0 +1,63 @@
+<table class="table borderless">
+  <thead style="background-color: white">
+   <tr>
+     <th></th>
+     <th>level</th>
+     <th>server</th>
+     <th>description</th>
+     <th style="text-align: center">log</th>
+     <th>timestamp</th>
+     <th>status</th>
+     <th></th>
+   </tr>
+  </thead>
+  <tbody>
+  {{#each alert in alerts}}
+  <tr {{action 'toggleAlertSelection'}} {{bind-attr class="alert.isAlertSelected:alert-selected alert.isAlertDetailsActive:alert-detail-header"}}>
+      <td {{action 'toggleAlertDetails'}} style="width: 30px">
+        {{dropdown-arrow toggled=alert.isAlertDetailsActive}}
+      </td>
+      <td style="width: 50px; text-align: center; padding: 10px" {{action 'toggleAlertSelection'}}>
+        <div style="color:white; background-color: rgb(249, 63,63)"> 
+        {{alert.level}}
+        </div>
+      </td>
+      <td>{{alert.server}}</td>
+      <td>{{alert.description}}</td>
+      <td class="full-log">{{alert.full_log}}</td>
+      <td style="width: 160px">{{format-date alert.timestamp 'ddd MMM D YYYY HH:mm'}}</td>
+
+      <td>
+        <div {{bind-attr class='alert.isAlertAcknowledged:bold-green'}}>
+          {{ack-dropdown content=alert.statuses value=alert.status selectedValue="updateAlertAcknowledgement"}}
+        </div>
+      </td>
+      <td></td>
+    </tr>
+    <tr {{bind-attr class=':alert-detail-borders alert.isAlertDetailsActive::disabled'}}>
+      <td colspan=8>
+        <div class="alert-detail container-fluid">
+          <p style="font-weight: bold">Comments</p>
+          {{#each alert.comments}}
+            <ul style="list-style-type: none;">
+              <li>
+               <div style="padding: 5px 5px 5px 5px; width: 20%">
+                 <p>user: <span style="font-weight: bold">{{author}}</span></p>
+                 <p> on: {{format-date timestamp 'ddd MMM D YYYY HH:mm'}}</p>
+                 <p>{{content}}</p>
+               </div>
+             </li>
+            </ul>
+          {{/each}}
+          {{textarea value=alert.newComment}}
+          <button class="btn btn-primary" {{action "saveComment"}}>Save</button>
+          {{#if alert.errorMessage}}
+            <p class="alert alert-danger" style="width: 30%">{{alert.errorMessage}}</p>
+          {{/if}}
+        </div>
+
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

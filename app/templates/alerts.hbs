@@ -1,0 +1,16 @@
+{{partial "navbar"}}
+<div class="container-fluid" style="background-color: white">
+  <div class="row alerts-header">
+    <h4> Alerts {{length}}  </h4>
+  </div>
+</div>
+
+<div style="background-color: #CFCBCB; padding-top: 1px">
+  <div class="container-fluid" style="background-color: white; margin: 10px; padding: 30px 55px 55px 55px">
+    <div class=wrapper>
+        {{alerts-table alerts=controller}}
+    </div>
+  </div>
+</div>
+
+

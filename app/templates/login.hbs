@@ -1,0 +1,20 @@
+<div class="login-wrapper">
+  <div class="container">
+    <form role="form" class="form-signin" {{action 'login' on="submit"}}>
+      <h2>LDAP Login</h2>
+      <div class="form-group">
+        <!--<input type="login" class="form-control" id="innputLogin" placeholder="Enter login">-->
+        {{input value=username type="text" placeholder="Enter login"}}
+      </div>
+      <div class="form-group">
+        <!--<input type="password" class="form-control" id="innputPassword" placeholder="Password">-->
+        {{input value=password type="password" placeholder="Possword"}}
+      </div>
+      <!--<button type="submit" class="btn btn-default">Submit</button>-->
+      {{input class="btn btn-default" type="submit" value="Log In"}}
+    {{#if errorMessage }}
+      <div class="alert alert-danger">{{errorMessage}}</div>
+    {{/if}}
+    </form>
+  </div>
+</div>

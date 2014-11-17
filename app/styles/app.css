@@ -170,3 +170,22 @@ tbody {
 .disabled{
   display: none;
 }
+
+.alert-level{ color:white; }
+
+.alert-level-1{ background-color: #ffe5e5}
+.alert-level-2{ background-color: #ffcccc}
+.alert-level-3{ background-color: #ffb2b2}
+.alert-level-4{ background-color: #ff9999}
+.alert-level-5{ background-color: #ff7f7f}
+.alert-level-6{ background-color: #ff6666}
+.alert-level-7{ background-color: #ff4c4c}
+.alert-level-8{ background-color: #ff3232}
+.alert-level-9{ background-color: #ff1919}
+.alert-level-10{ background-color: #ff0000} 
+.alert-level-11{ background-color: #cc0000}
+.alert-level-12{ background-color: #990000}
+.alert-level-13{ background-color: #660000}
+.alert-level-14{ background-color: #330000}
+.alert-level-15{ background-color: #000000}
+

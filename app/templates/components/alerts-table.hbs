@@ -17,10 +17,8 @@
       <td {{action 'toggleAlertDetails'}} style="width: 30px">
         {{dropdown-arrow toggled=alert.isAlertDetailsActive}}
       </td>
-      <td style="width: 50px; text-align: center; padding: 10px" {{action 'toggleAlertSelection'}}>
-        <div style="color:white; background-color: rgb(249, 63,63)"> 
-        {{alert.level}}
-        </div>
+      <td style="width: 50px; text-align: center; padding: 10px">
+        {{alert-level level=alert.level}}
       </td>
       <td>{{alert.server}}</td>
       <td>{{alert.description}}</td>

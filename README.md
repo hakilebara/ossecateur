@@ -13,15 +13,13 @@ You will need the following things properly installed on your computer.
 * [Apache](http://www.apache.org) and [PHP](http://php.net) (>= 5.3.0)
 * [MySQL](http://www.mysql.com)
 
-## Installation
 
+## Running / Development
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
-
-## Running / Development
-
+* 
 * `ember server --proxy http://localhost`
 * Visit your app at http://localhost:4200.
 

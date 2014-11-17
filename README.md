@@ -1,8 +1,8 @@
 # ossecateur
 
-This README outlines the details of collaborating on this Ember application.
-
- a Web Front End for OSSEC that handles alerts visualisation and acknowledgement.
+ a Web front end for OSSEC that handles alerts visualisation and acknowledgement.
+ 
+ The front end is an EmberJS/Ember-Data webapp that communicates with a Slim PHP API.
  
  ossecateur is based on OSSEC 2.8
 

@@ -15,11 +15,14 @@ You will need the following things properly installed on your computer.
 
 
 ## Running / Development
-* `git clone <repository-url>` this repository
-* change into the new directory
+* `git clone https://github.com/fsoumare/ossecateur.git`
+* `cd ossecateur`
 * `npm install`
 * `bower install`
-* 
+
+* mkdir /var/www/html/ossecateur
+* ln -s /var/www/html/ossecateur/api api
+
 * `ember server --proxy http://localhost`
 * Visit your app at http://localhost:4200.
 

@@ -10,6 +10,8 @@ You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+* [Apache](http://www.apache.org) and [PHP](http://php.net) (>= 5.3.0)
+* [MySQL](http://www.mysql.com)
 
 ## Installation
 
@@ -20,13 +22,9 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember server`
+* `ember server --proxy http://localhost`
 * Visit your app at http://localhost:4200.
 
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
@@ -40,7 +38,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Work in progress
 
 ## Further Reading / Useful Links
 

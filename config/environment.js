@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ossec-manager',
     environment: environment,
-    baseURL: '/ossec-manager',
+    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -40,6 +40,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+
   }
 
   return ENV;

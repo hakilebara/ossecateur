@@ -35,6 +35,7 @@ If you do not have an OSSEC database yet, you can use the sample db provided
 Configure PHP authentation to to your OSSEC database
 * in `api/index.php` edit the line `pdo = new PDO("mysql:dbname=ossec", "root");`
 
+Run Ember-CLI development server
 * `ember server --proxy http://localhost`
 * Visit your app at http://localhost:4200.
 

@@ -1,6 +1,6 @@
 <?php
-require '../Slim/Slim.php';
-require '../NotORM.php';
+require 'Slim/Slim.php';
+require 'NotORM.php';
 
 $pdo = new PDO("mysql:dbname=ossec", "root");
 $db = new NotORM($pdo);
@@ -27,7 +27,7 @@ $app->post("/auth", function() use ($app, $db){
   $username = $req->post('username');
   $password = $req->post('password');
 
-  if ($username == 'nocapac' && $password == 'glglgl') {
+  if ($username == 'admin' && $password == 'admin') {
       echo json_encode(array(
         "success" => true,
         "token"   => base64_encode("$username:$password")
@@ -42,7 +42,7 @@ $app->post("/auth", function() use ($app, $db){
 
 function isTokenProvidedValid($req, $res) { 
   //uncomment to disable authentication
-  return true;
+  //return true;
   $userToken = $req->headers->get('token');
   //file_put_contents("ossec_api.log", print_r($userToken, true));
   //file_put_contents("ossec_api.log", print_r(base64_decode($userToken), true));
@@ -54,7 +54,7 @@ function isTokenProvidedValid($req, $res) {
     return false;
   }
   list($username, $password) = explode(':', base64_decode($userToken));
-  if ($username == 'nocapac' && $password == 'glglgl') {
+  if ($username == 'admin' && $password == 'admin') {
     return true;
   } 
   else {

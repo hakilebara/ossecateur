@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.69, for redhat-linux-gnu (x86_64)
+-- MySQL dump 10.15  Distrib 10.0.11-MariaDB, for osx10.9 (i386)
 --
 -- Host: localhost    Database: ossec
 -- ------------------------------------------------------
--- Server version	5.1.69
+-- Server version	10.0.11-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,33 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `acknowledgement`
+--
+
+DROP TABLE IF EXISTS `acknowledgement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `acknowledgement` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `alert_id` int(10) unsigned NOT NULL,
+  `owner` varchar(32) NOT NULL,
+  `timestamp` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `time` (`timestamp`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `acknowledgement`
+--
+
+LOCK TABLES `acknowledgement` WRITE;
+/*!40000 ALTER TABLE `acknowledgement` DISABLE KEYS */;
+INSERT INTO `acknowledgement` VALUES (1,2,'operator',0),(2,3,'operator',0),(3,4,'operator',0),(4,6,'operator',0),(5,5,'operator',0),(6,7,'operator',0),(7,1,'operator',0),(8,8,'operator',0);
+/*!40000 ALTER TABLE `acknowledgement` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `agent`
@@ -128,7 +155,7 @@ CREATE TABLE `data` (
 
 LOCK TABLES `data` WRITE;
 /*!40000 ALTER TABLE `data` DISABLE KEYS */;
-INSERT INTO `data` VALUES (1,1,'(null)','ossec: Ossec started.','2014-10-02 04:14:00'),(2,1,'nocapac','Oct  2 12:14:23 lintoolsga02 sshd[10806]: Accepted password for nocapac from 212.16.72.44 port 57771 ssh2','2014-10-02 04:14:25'),(3,1,'(null)','Oct  2 12:14:23 lintoolsga02 sshd[10806]: pam_unix(sshd:session): session opened for user nocapac by (uid=0)','2014-10-02 04:14:25'),(4,1,'(null)','Oct  2 12:14:26 lintoolsga02 su: pam_unix(su-l:session): session opened for user root by nocapac(uid=203)','2014-10-02 04:14:30'),(5,1,'(null)','Oct  2 12:20:59 lintoolsga02 useradd[10919]: new group: name=abc, GID=10005','2014-10-02 04:21:05'),(6,1,'(null)','Oct  2 12:20:59 lintoolsga02 useradd[10919]: new user: name=abc, UID=10005, GID=10005, home=/home/abc, shell=/bin/bash','2014-10-02 04:21:05'),(7,1,'(null)','Oct  2 12:21:06 lintoolsga02 passwd: pam_unix(passwd:chauthtok): password changed for abc','2014-10-02 04:21:10'),(8,1,'(null)','Oct  2 12:21:47 lintoolsga02 userdel[10937]: delete user `abc`','2014-10-02 04:21:50'),(9,1,'(null)','System Audit: PHP - Expose PHP is enabled. File: /etc/php.ini.','2014-10-02 04:22:10'),(10,1,'(null)','System Audit: PHP - Allow URL fopen is enabled. File: /etc/php.ini.','2014-10-02 04:22:10'),(11,1,'(null)','System Audit: Web exploits (uncommon file name inside htdocs) - Possible compromise. File: /var/www/html/yii-1.1.14.f0fee9/requirements/messages/id. Reference: http://www.ossec.net/wiki/index.php/WebAttacks_links .','2014-10-02 04:22:10'),(12,1,'(null)','System Audit: Web exploits (uncommon file name inside htdocs) - Possible compromise. File: /var/www/html/yii-1.1.14.f0fee9/framework/views/id. Reference: http://www.ossec.net/wiki/index.php/WebAttacks_links .','2014-10-02 04:22:10'),(13,1,'(null)','System Audit: Web exploits (uncommon file name inside htdocs) - Possible compromise. File: /var/www/html/yii-1.1.14.f0fee9/framework/messages/id. Reference: http://www.ossec.net/wiki/index.php/WebAttacks_links .','2014-10-02 04:22:10'),(14,1,'(null)','Oct  2 12:47:49 lintoolsga02 sshd[6833]: pam_unix(sshd:session): session closed for user nocapac','2014-10-02 04:47:52'),(15,1,'(null)','Oct  2 12:47:49 lintoolsga02 su: pam_unix(su-l:session): session closed for user root','2014-10-02 04:47:52'),(16,1,'(null)','Oct  2 12:48:46 lintoolsga02 sshd[10806]: pam_unix(sshd:session): session closed for user nocapac','2014-10-02 04:48:47'),(17,1,'(null)','Oct  2 12:48:46 lintoolsga02 su: pam_unix(su-l:session): session closed for user root','2014-10-02 04:48:47'),(18,1,'nocapac','Oct  2 13:25:54 lintoolsga02 sshd[12049]: Accepted password for nocapac from 212.16.72.44 port 36504 ssh2','2014-10-02 05:25:59'),(19,1,'(null)','Oct  2 13:25:54 lintoolsga02 sshd[12049]: pam_unix(sshd:session): session opened for user nocapac by (uid=0)','2014-10-02 05:25:59'),(20,1,'(null)','Oct  2 13:49:43 lintoolsga02 sshd[12049]: pam_unix(sshd:session): session closed for user nocapac','2014-10-02 05:49:45'),(21,1,'nocapac','Oct  2 16:24:59 lintoolsga02 sshd[13614]: Accepted password for nocapac from 212.16.72.44 port 38753 ssh2','2014-10-02 08:25:05'),(22,1,'(null)','Oct  2 16:24:59 lintoolsga02 sshd[13614]: pam_unix(sshd:session): session opened for user nocapac by (uid=0)','2014-10-02 08:25:05');
+INSERT INTO `data` VALUES (1,1,'(null)','ossec: Ossec started.','2014-10-02 04:14:00'),(2,1,'operator','Oct  2 12:14:23 webserver01 sshd[10806]: Accepted password for operator from 192.168.0.23 port 57771 ssh2','2014-10-02 04:14:25'),(3,1,'(null)','Oct  2 12:14:23 webserver01 sshd[10806]: pam_unix(sshd:session): session opened for user operator by (uid=0)','2014-10-02 04:14:25'),(4,1,'(null)','Oct  2 12:14:26 webserver01 su: pam_unix(su-l:session): session opened for user root by operator(uid=203)','2014-10-02 04:14:30'),(5,1,'(null)','Oct  2 12:20:59 webserver01 useradd[10919]: new group: name=abc, GID=10005','2014-10-02 04:21:05'),(6,1,'(null)','Oct  2 12:20:59 webserver01 useradd[10919]: new user: name=abc, UID=10005, GID=10005, home=/home/abc, shell=/bin/bash','2014-10-02 04:21:05'),(7,1,'(null)','Oct  2 12:21:06 webserver01 passwd: pam_unix(passwd:chauthtok): password changed for abc','2014-10-02 04:21:10'),(8,1,'(null)','Oct  2 12:21:47 webserver01 userdel[10937]: delete user `abc`','2014-10-02 04:21:50'),(9,1,'(null)','System Audit: PHP - Expose PHP is enabled. File: /etc/php.ini.','2014-10-02 04:22:10'),(10,1,'(null)','System Audit: PHP - Allow URL fopen is enabled. File: /etc/php.ini.','2014-10-02 04:22:10'),(11,1,'(null)','System Audit: Web exploits (uncommon file name inside htdocs) - Possible compromise. File: /var/www/html/yii-1.1.14.f0fee9/requirements/messages/id. Reference: http://www.ossec.net/wiki/index.php/WebAttacks_links .','2014-10-02 04:22:10'),(12,1,'(null)','System Audit: Web exploits (uncommon file name inside htdocs) - Possible compromise. File: /var/www/html/yii-1.1.14.f0fee9/framework/views/id. Reference: http://www.ossec.net/wiki/index.php/WebAttacks_links .','2014-10-02 04:22:10'),(13,1,'(null)','System Audit: Web exploits (uncommon file name inside htdocs) - Possible compromise. File: /var/www/html/yii-1.1.14.f0fee9/framework/messages/id. Reference: http://www.ossec.net/wiki/index.php/WebAttacks_links .','2014-10-02 04:22:10'),(14,1,'(null)','Oct  2 12:47:49 webserver01 sshd[6833]: pam_unix(sshd:session): session closed for user operator','2014-10-02 04:47:52'),(15,1,'(null)','Oct  2 12:47:49 webserver01 su: pam_unix(su-l:session): session closed for user root','2014-10-02 04:47:52'),(16,1,'(null)','Oct  2 12:48:46 webserver01 sshd[10806]: pam_unix(sshd:session): session closed for user operator','2014-10-02 04:48:47'),(17,1,'(null)','Oct  2 12:48:46 webserver01 su: pam_unix(su-l:session): session closed for user root','2014-10-02 04:48:47'),(18,1,'operator','Oct  2 13:25:54 webserver01 sshd[12049]: Accepted password for operator from 192.168.0.23 port 36504 ssh2','2014-10-02 05:25:59'),(19,1,'(null)','Oct  2 13:25:54 webserver01 sshd[12049]: pam_unix(sshd:session): session opened for user operator by (uid=0)','2014-10-02 05:25:59'),(20,1,'(null)','Oct  2 13:49:43 webserver01 sshd[12049]: pam_unix(sshd:session): session closed for user operator','2014-10-02 05:49:45'),(21,1,'operator','Oct  2 16:24:59 webserver01 sshd[13614]: Accepted password for operator from 192.168.0.23 port 38753 ssh2','2014-10-02 08:25:05'),(22,1,'(null)','Oct  2 16:24:59 webserver01 sshd[13614]: pam_unix(sshd:session): session opened for user operator by (uid=0)','2014-10-02 08:25:05');
 /*!40000 ALTER TABLE `data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +180,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (1,1,'lintoolsga02->ossec-monitord'),(2,1,'lintoolsga02->/var/log/secure'),(3,1,'lintoolsga02->rootcheck');
+INSERT INTO `location` VALUES (1,1,'webserver01->ossec-monitord'),(2,1,'webserver01->/var/log/secure'),(3,1,'webserver01->rootcheck');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +208,7 @@ CREATE TABLE `server` (
 
 LOCK TABLES `server` WRITE;
 /*!40000 ALTER TABLE `server` DISABLE KEYS */;
-INSERT INTO `server` VALUES (1,1412223228,'v2.8','lintoolsga02','Linux lintoolsga02 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 - OSSEC HIDS v2.8');
+INSERT INTO `server` VALUES (1,1412223228,'v2.8','webserver01','Linux webserver01 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 - OSSEC HIDS v2.8');
 /*!40000 ALTER TABLE `server` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,4 +275,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-02 16:25:36
+-- Dump completed on 2014-11-17  8:29:36

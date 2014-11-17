@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       var data = this.getProperties('username', 'password');
       self.set('errorMessage', null);
        // TODO: Move API authentication url to the config/environment.js
-      Ember.$.post('http://localhost/api/ossec/auth', data).then(function(response) {
+      Ember.$.post('http://localhost/ossecateur/api/auth', data).then(function(response) {
 
         // Check the response for the token
         var jsonResponse = Ember.$.parseJSON(response);

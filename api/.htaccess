@@ -8,11 +8,3 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
-
-#<LimitExcept OPTIONS>
-#  AuthName "FAIL"
-#  AuthType Basic
-#  AuthUserFile /etc/apache2/passwd
-#  Require user nocapac
-#</LimitExcept>
-#

@@ -50,6 +50,10 @@ Run Ember-CLI development server
 * `ember build --environment production`
 * `cp -a dist/* /var/www/html/ossecateur/`
 
+## Authentication
+* The default credentials are `admin/admin`
+* You will need to create your own authentication method by rewriting the `authenticate` function in `api/authenticate.php`
+
 ## Further Reading / Useful Links
 
 * ember: http://emberjs.com/
